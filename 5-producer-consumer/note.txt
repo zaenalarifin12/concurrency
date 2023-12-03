@@ -1,0 +1,18 @@
+[
+  {"title": "BlackString", "colorCode": "30"},
+  {"title": "RedString", "colorCode": "31"},
+  {"title": "GreenString", "colorCode": "32"},
+  {"title": "YellowString", "colorCode": "33"},
+  {"title": "BlueString", "colorCode": "34"},
+  {"title": "MagentaString", "colorCode": "35"},
+  {"title": "CyanString", "colorCode": "36"},
+  {"title": "WhiteString", "colorCode": "37"},
+  {"title": "HiBlackString", "colorCode": "90"},
+  {"title": "HiRedString", "colorCode": "91"},
+  {"title": "HiGreenString", "colorCode": "92"},
+  {"title": "HiYellowString", "colorCode": "93"},
+  {"title": "HiBlueString", "colorCode": "94"},
+  {"title": "HiMagentaString", "colorCode": "95"},
+  {"title": "HiCyanString", "colorCode": "96"},
+  {"title": "HiWhiteString", "colorCode": "97"}
+]
