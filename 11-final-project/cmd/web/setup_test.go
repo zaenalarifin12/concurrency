@@ -19,6 +19,8 @@ var testApp Config
 func TestMain(m *testing.M) {
 	gob.Register(data.User{})
 
+	tmpPath = "./../../tmp"
+	pathToManual = "./../../pdf"
 	// set up session
 	session := scs.New()
 	session.Lifetime = 24 * time.Hour
@@ -32,6 +34,7 @@ func TestMain(m *testing.M) {
 		InfoLog:       log.New(os.Stdout, "INFO\t", log.Ldate|log.Ltime),
 		ErrorLog:      log.New(os.Stdout, "ERROR\t", log.Ldate|log.Ltime|log.Lshortfile),
 		Wait:          &sync.WaitGroup{},
+		Models:        data.TestNew(nil),
 		ErrorChan:     make(chan error),
 		ErrorChanDone: make(chan bool),
 	}
@@ -51,6 +54,7 @@ func TestMain(m *testing.M) {
 	go func() {
 		select {
 		case <-testApp.Mailer.MailerChan:
+			testApp.Wait.Done()
 		case <-testApp.Mailer.ErrorChan:
 		case <-testApp.Mailer.DoneChan:
 			return
